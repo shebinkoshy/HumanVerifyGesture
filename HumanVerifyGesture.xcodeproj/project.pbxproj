@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		98FA74AB1F093D390076B51F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA74AA1F093D390076B51F /* AppDelegate.swift */; };
+		98FA74AD1F093D390076B51F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA74AC1F093D390076B51F /* ViewController.swift */; };
+		98FA74B01F093D390076B51F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FA74AE1F093D390076B51F /* Main.storyboard */; };
+		98FA74B21F093D390076B51F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FA74B11F093D390076B51F /* Assets.xcassets */; };
+		98FA74B51F093D390076B51F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FA74B31F093D390076B51F /* LaunchScreen.storyboard */; };
+		98FA74C01F093D390076B51F /* HumanVerifyGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA74BF1F093D390076B51F /* HumanVerifyGestureTests.swift */; };
+		98FA74CB1F093D390076B51F /* HumanVerifyGestureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA74CA1F093D390076B51F /* HumanVerifyGestureUITests.swift */; };
+		98FA74DA1F09488E0076B51F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FA74D91F09488E0076B51F /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		98FA74BC1F093D390076B51F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98FA749F1F093D390076B51F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98FA74A61F093D390076B51F;
+			remoteInfo = HumanVerifyGesture;
+		};
+		98FA74C71F093D390076B51F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98FA749F1F093D390076B51F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98FA74A61F093D390076B51F;
+			remoteInfo = HumanVerifyGesture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		98FA74A71F093D390076B51F /* HumanVerifyGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanVerifyGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98FA74AA1F093D390076B51F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		98FA74AC1F093D390076B51F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98FA74AF1F093D390076B51F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		98FA74B11F093D390076B51F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98FA74B41F093D390076B51F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		98FA74B61F093D390076B51F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98FA74BB1F093D390076B51F /* HumanVerifyGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HumanVerifyGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98FA74BF1F093D390076B51F /* HumanVerifyGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanVerifyGestureTests.swift; sourceTree = "<group>"; };
+		98FA74C11F093D390076B51F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98FA74C61F093D390076B51F /* HumanVerifyGestureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HumanVerifyGestureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98FA74CA1F093D390076B51F /* HumanVerifyGestureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanVerifyGestureUITests.swift; sourceTree = "<group>"; };
+		98FA74CC1F093D390076B51F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98FA74D91F09488E0076B51F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98FA74A41F093D390076B51F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98FA74DA1F09488E0076B51F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98FA74B81F093D390076B51F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98FA74C31F093D390076B51F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		98FA749E1F093D390076B51F = {
+			isa = PBXGroup;
+			children = (
+				98FA74A91F093D390076B51F /* HumanVerifyGesture */,
+				98FA74BE1F093D390076B51F /* HumanVerifyGestureTests */,
+				98FA74C91F093D390076B51F /* HumanVerifyGestureUITests */,
+				98FA74A81F093D390076B51F /* Products */,
+				98FA74D81F09488E0076B51F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		98FA74A81F093D390076B51F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98FA74A71F093D390076B51F /* HumanVerifyGesture.app */,
+				98FA74BB1F093D390076B51F /* HumanVerifyGestureTests.xctest */,
+				98FA74C61F093D390076B51F /* HumanVerifyGestureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98FA74A91F093D390076B51F /* HumanVerifyGesture */ = {
+			isa = PBXGroup;
+			children = (
+				98FA74AA1F093D390076B51F /* AppDelegate.swift */,
+				98FA74AC1F093D390076B51F /* ViewController.swift */,
+				98FA74AE1F093D390076B51F /* Main.storyboard */,
+				98FA74B11F093D390076B51F /* Assets.xcassets */,
+				98FA74B31F093D390076B51F /* LaunchScreen.storyboard */,
+				98FA74B61F093D390076B51F /* Info.plist */,
+			);
+			path = HumanVerifyGesture;
+			sourceTree = "<group>";
+		};
+		98FA74BE1F093D390076B51F /* HumanVerifyGestureTests */ = {
+			isa = PBXGroup;
+			children = (
+				98FA74BF1F093D390076B51F /* HumanVerifyGestureTests.swift */,
+				98FA74C11F093D390076B51F /* Info.plist */,
+			);
+			path = HumanVerifyGestureTests;
+			sourceTree = "<group>";
+		};
+		98FA74C91F093D390076B51F /* HumanVerifyGestureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				98FA74CA1F093D390076B51F /* HumanVerifyGestureUITests.swift */,
+				98FA74CC1F093D390076B51F /* Info.plist */,
+			);
+			path = HumanVerifyGestureUITests;
+			sourceTree = "<group>";
+		};
+		98FA74D81F09488E0076B51F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98FA74D91F09488E0076B51F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98FA74A61F093D390076B51F /* HumanVerifyGesture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98FA74CF1F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGesture" */;
+			buildPhases = (
+				98FA74A31F093D390076B51F /* Sources */,
+				98FA74A41F093D390076B51F /* Frameworks */,
+				98FA74A51F093D390076B51F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HumanVerifyGesture;
+			productName = HumanVerifyGesture;
+			productReference = 98FA74A71F093D390076B51F /* HumanVerifyGesture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		98FA74BA1F093D390076B51F /* HumanVerifyGestureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98FA74D21F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGestureTests" */;
+			buildPhases = (
+				98FA74B71F093D390076B51F /* Sources */,
+				98FA74B81F093D390076B51F /* Frameworks */,
+				98FA74B91F093D390076B51F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98FA74BD1F093D390076B51F /* PBXTargetDependency */,
+			);
+			name = HumanVerifyGestureTests;
+			productName = HumanVerifyGestureTests;
+			productReference = 98FA74BB1F093D390076B51F /* HumanVerifyGestureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		98FA74C51F093D390076B51F /* HumanVerifyGestureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98FA74D51F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGestureUITests" */;
+			buildPhases = (
+				98FA74C21F093D390076B51F /* Sources */,
+				98FA74C31F093D390076B51F /* Frameworks */,
+				98FA74C41F093D390076B51F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98FA74C81F093D390076B51F /* PBXTargetDependency */,
+			);
+			name = HumanVerifyGestureUITests;
+			productName = HumanVerifyGestureUITests;
+			productReference = 98FA74C61F093D390076B51F /* HumanVerifyGestureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98FA749F1F093D390076B51F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Shebin Koshy";
+				TargetAttributes = {
+					98FA74A61F093D390076B51F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					98FA74BA1F093D390076B51F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 98FA74A61F093D390076B51F;
+					};
+					98FA74C51F093D390076B51F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 98FA74A61F093D390076B51F;
+					};
+				};
+			};
+			buildConfigurationList = 98FA74A21F093D390076B51F /* Build configuration list for PBXProject "HumanVerifyGesture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 98FA749E1F093D390076B51F;
+			productRefGroup = 98FA74A81F093D390076B51F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98FA74A61F093D390076B51F /* HumanVerifyGesture */,
+				98FA74BA1F093D390076B51F /* HumanVerifyGestureTests */,
+				98FA74C51F093D390076B51F /* HumanVerifyGestureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98FA74A51F093D390076B51F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98FA74B51F093D390076B51F /* LaunchScreen.storyboard in Resources */,
+				98FA74B21F093D390076B51F /* Assets.xcassets in Resources */,
+				98FA74B01F093D390076B51F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98FA74B91F093D390076B51F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98FA74C41F093D390076B51F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98FA74A31F093D390076B51F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98FA74AD1F093D390076B51F /* ViewController.swift in Sources */,
+				98FA74AB1F093D390076B51F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98FA74B71F093D390076B51F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98FA74C01F093D390076B51F /* HumanVerifyGestureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98FA74C21F093D390076B51F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98FA74CB1F093D390076B51F /* HumanVerifyGestureUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		98FA74BD1F093D390076B51F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98FA74A61F093D390076B51F /* HumanVerifyGesture */;
+			targetProxy = 98FA74BC1F093D390076B51F /* PBXContainerItemProxy */;
+		};
+		98FA74C81F093D390076B51F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98FA74A61F093D390076B51F /* HumanVerifyGesture */;
+			targetProxy = 98FA74C71F093D390076B51F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		98FA74AE1F093D390076B51F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98FA74AF1F093D390076B51F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		98FA74B31F093D390076B51F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98FA74B41F093D390076B51F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98FA74CD1F093D390076B51F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98FA74CE1F093D390076B51F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98FA74D01F093D390076B51F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HumanVerifyGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		98FA74D11F093D390076B51F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HumanVerifyGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		98FA74D31F093D390076B51F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HumanVerifyGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HumanVerifyGesture.app/HumanVerifyGesture";
+			};
+			name = Debug;
+		};
+		98FA74D41F093D390076B51F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HumanVerifyGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HumanVerifyGesture.app/HumanVerifyGesture";
+			};
+			name = Release;
+		};
+		98FA74D61F093D390076B51F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HumanVerifyGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HumanVerifyGesture;
+			};
+			name = Debug;
+		};
+		98FA74D71F093D390076B51F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HumanVerifyGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HumanVerifyGesture;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98FA74A21F093D390076B51F /* Build configuration list for PBXProject "HumanVerifyGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98FA74CD1F093D390076B51F /* Debug */,
+				98FA74CE1F093D390076B51F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98FA74CF1F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98FA74D01F093D390076B51F /* Debug */,
+				98FA74D11F093D390076B51F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		98FA74D21F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGestureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98FA74D31F093D390076B51F /* Debug */,
+				98FA74D41F093D390076B51F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		98FA74D51F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGestureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98FA74D61F093D390076B51F /* Debug */,
+				98FA74D71F093D390076B51F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98FA749F1F093D390076B51F /* Project object */;
+}
