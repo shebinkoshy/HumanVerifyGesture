@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98B55D721F1106EB00CE8E77 /* AGKLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B55D711F1106EB00CE8E77 /* AGKLine.m */; };
+		98B55D761F11083400CE8E77 /* CGGeometry+AGGeometryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B55D751F11083400CE8E77 /* CGGeometry+AGGeometryKit.m */; };
+		98B55D791F110EFC00CE8E77 /* LineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B55D781F110EFC00CE8E77 /* LineManager.m */; };
+		98B55D7C1F111FEF00CE8E77 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B55D7B1F111FEF00CE8E77 /* MyViewController.m */; };
 		98FA74AB1F093D390076B51F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA74AA1F093D390076B51F /* AppDelegate.swift */; };
 		98FA74AD1F093D390076B51F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA74AC1F093D390076B51F /* ViewController.swift */; };
 		98FA74B01F093D390076B51F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FA74AE1F093D390076B51F /* Main.storyboard */; };
@@ -35,6 +39,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		98B55D6F1F1106EA00CE8E77 /* HumanVerifyGesture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HumanVerifyGesture-Bridging-Header.h"; sourceTree = "<group>"; };
+		98B55D701F1106EB00CE8E77 /* AGKLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKLine.h; sourceTree = "<group>"; };
+		98B55D711F1106EB00CE8E77 /* AGKLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGKLine.m; sourceTree = "<group>"; };
+		98B55D731F11078300CE8E77 /* AGKBaseDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGKBaseDefines.h; sourceTree = "<group>"; };
+		98B55D741F11083400CE8E77 /* CGGeometry+AGGeometryKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+AGGeometryKit.h"; sourceTree = "<group>"; };
+		98B55D751F11083400CE8E77 /* CGGeometry+AGGeometryKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+AGGeometryKit.m"; sourceTree = "<group>"; };
+		98B55D771F110EFC00CE8E77 /* LineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineManager.h; sourceTree = "<group>"; };
+		98B55D781F110EFC00CE8E77 /* LineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineManager.m; sourceTree = "<group>"; };
+		98B55D7A1F111FEF00CE8E77 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		98B55D7B1F111FEF00CE8E77 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		98FA74A71F093D390076B51F /* HumanVerifyGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanVerifyGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FA74AA1F093D390076B51F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FA74AC1F093D390076B51F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,9 +118,19 @@
 				98FA74AA1F093D390076B51F /* AppDelegate.swift */,
 				98FA74AC1F093D390076B51F /* ViewController.swift */,
 				98FA74AE1F093D390076B51F /* Main.storyboard */,
+				98B55D7A1F111FEF00CE8E77 /* MyViewController.h */,
+				98B55D7B1F111FEF00CE8E77 /* MyViewController.m */,
+				98B55D741F11083400CE8E77 /* CGGeometry+AGGeometryKit.h */,
+				98B55D751F11083400CE8E77 /* CGGeometry+AGGeometryKit.m */,
+				98B55D701F1106EB00CE8E77 /* AGKLine.h */,
+				98B55D711F1106EB00CE8E77 /* AGKLine.m */,
+				98B55D731F11078300CE8E77 /* AGKBaseDefines.h */,
+				98B55D771F110EFC00CE8E77 /* LineManager.h */,
+				98B55D781F110EFC00CE8E77 /* LineManager.m */,
 				98FA74B11F093D390076B51F /* Assets.xcassets */,
 				98FA74B31F093D390076B51F /* LaunchScreen.storyboard */,
 				98FA74B61F093D390076B51F /* Info.plist */,
+				98B55D6F1F1106EA00CE8E77 /* HumanVerifyGesture-Bridging-Header.h */,
 			);
 			path = HumanVerifyGesture;
 			sourceTree = "<group>";
@@ -205,6 +229,7 @@
 				TargetAttributes = {
 					98FA74A61F093D390076B51F = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					98FA74BA1F093D390076B51F = {
@@ -271,7 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B55D7C1F111FEF00CE8E77 /* MyViewController.m in Sources */,
+				98B55D791F110EFC00CE8E77 /* LineManager.m in Sources */,
 				98FA74AD1F093D390076B51F /* ViewController.swift in Sources */,
+				98B55D721F1106EB00CE8E77 /* AGKLine.m in Sources */,
+				98B55D761F11083400CE8E77 /* CGGeometry+AGGeometryKit.m in Sources */,
 				98FA74AB1F093D390076B51F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,10 +455,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HumanVerifyGesture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGesture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HumanVerifyGesture/HumanVerifyGesture-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -438,10 +470,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HumanVerifyGesture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ShebinKoshy.HumanVerifyGesture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HumanVerifyGesture/HumanVerifyGesture-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -519,6 +553,7 @@
 				98FA74D11F093D390076B51F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98FA74D21F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGestureTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +562,7 @@
 				98FA74D41F093D390076B51F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98FA74D51F093D390076B51F /* Build configuration list for PBXNativeTarget "HumanVerifyGestureUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +571,7 @@
 				98FA74D71F093D390076B51F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

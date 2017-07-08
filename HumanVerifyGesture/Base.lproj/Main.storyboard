@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-G9-JcJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-fc-xKE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUc-hL-kQW">
                                 <rect key="frame" x="166.5" y="587" width="42" height="21"/>
@@ -55,11 +55,11 @@
                             <constraint firstItem="4fe-G9-JcJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qs1-hu-zeB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4fe-G9-JcJ" secondAttribute="bottom" id="TzQ-Af-2Yq"/>
                             <constraint firstAttribute="trailing" secondItem="IEJ-fc-xKE" secondAttribute="trailing" id="We2-lE-lQp"/>
-                            <constraint firstItem="4fe-G9-JcJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Z7p-uw-0Pz"/>
+                            <constraint firstItem="4fe-G9-JcJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Z7p-uw-0Pz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IEJ-fc-xKE" secondAttribute="bottom" id="gdQ-Im-gbg"/>
                             <constraint firstItem="PUc-hL-kQW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nyD-cl-RWu"/>
                             <constraint firstItem="w35-XI-qc0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qEc-Aa-EaT"/>
-                            <constraint firstItem="IEJ-fc-xKE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sjk-tn-Wno"/>
+                            <constraint firstItem="IEJ-fc-xKE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="sjk-tn-Wno"/>
                             <constraint firstItem="PUc-hL-kQW" firstAttribute="top" secondItem="w35-XI-qc0" secondAttribute="bottom" constant="48" id="xLI-jE-Erw"/>
                         </constraints>
                     </view>
