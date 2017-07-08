@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     let brush = 3.0
     var path: UIBezierPath?
     var isSucceed : Bool?
-    var drawingPaths : NSMutableArray?
+    var drawingPaths : [CGPoint]?
     
     @IBOutlet weak var labelResult: UILabel!
    
@@ -55,6 +55,22 @@ class ViewController: UIViewController {
 
         }
         print("pppp\(path)")
+        
+//        let path1 = withUnsafeMutablePointer(&transform)
+//        {
+//            CGPathCreateWithRect(CGRect(...), UnsafeMutablePointer($0))
+//        }
+       let cgStrokedPath =  path?.cgPath.copy(strokingWithWidth: CGFloat(brush), lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0)
+//        CGPath.copy(brush,[],CGFloat(brush), CGLineCap.round, CGLineJoin.round, 0)
+////        let some = UnsafeMutablePointer($0)
+//        let cgStrokedPath = CGPathCreateCopyByStrokingPath(path?.cgPath, [], CGFloat(brush), CGLineCap.round, CGLineJoin.round, 0)
+//        let cgStrokedPath = CGPathCreateCopyByStrokingPath(path?.cgPath,CGAffineTransform.init(),brush,CGLineCap.round,CGLineJoin.round,0)
+//        CGPathRef cgStrokedPath = CGPathCreateCopyByStrokingPath(path.CGPath, NULL,
+//                                                                 lineWidth, kCGLineCapRound, kCGLineJoinRound, 0)
+       let strokedPath =  UIBezierPath(cgPath: cgStrokedPath!)
+        print("strokedppp\(strokedPath)")
+//        UIBezierPath *strokedPath = [UIBezierPath bezierPathWithCGPath:cgStrokedPath];
+//        printg
 
         mouseSwiped = false
     }
@@ -84,6 +100,7 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.clear()
+        drawingPaths = Array.init()
         isSucceed = true;
         mouseSwiped = false
         let  touch = touches.first
@@ -105,6 +122,7 @@ class ViewController: UIViewController {
         
         context?.move(to: lastPoint!)
         context?.addLine(to: currentPoint!)
+//        path.
         if (path?.contains(currentPoint!))! {
             context?.setStrokeColor(UIColor.red.cgColor)
 
@@ -118,7 +136,11 @@ class ViewController: UIViewController {
         context?.setLineWidth(CGFloat(brush))
         context?.setBlendMode(CGBlendMode.normal)
         context?.strokePath()
-        
+//        if ((context?.path) != nil) {
+            drawingPaths?.append(currentPoint as! CGPoint)
+
+//        }
+//        context.cop
         self.tempDrawImage.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         lastPoint = currentPoint
@@ -155,7 +177,10 @@ class ViewController: UIViewController {
             }
             context?.setBlendMode(CGBlendMode.normal)
             context?.strokePath()
-            context?.path
+            if ((context?.path) != nil) {
+                drawingPaths?.append(currentPoint!)
+                
+            }
             self.tempDrawImage.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
 
@@ -172,6 +197,7 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         DispatchQueue.main.async {
+            print("\(self.drawingPaths)")
             self.labelResult.isHidden = false
             self.buttonTryAgain.isHidden = false
             if (self.isSucceed == true)
