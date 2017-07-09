@@ -59,79 +59,11 @@ class ViewController: UIViewController {
             layer.fillColor = UIColor.brown.cgColor
             self.mainImage.layer.addSublayer(layer)
             
-            
-            
-
         }
-        print("pppp\(path)")
-        
-//        let path1 = withUnsafeMutablePointer(&transform)
-//        {
-//            CGPathCreateWithRect(CGRect(...), UnsafeMutablePointer($0))
-//        }
         cgStrokedPath =  path?.cgPath.copy(strokingWithWidth: CGFloat(brush), lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0)
-//        CGPath.copy(brush,[],CGFloat(brush), CGLineCap.round, CGLineJoin.round, 0)
-////        let some = UnsafeMutablePointer($0)
-//        let cgStrokedPath = CGPathCreateCopyByStrokingPath(path?.cgPath, [], CGFloat(brush), CGLineCap.round, CGLineJoin.round, 0)
-//        let cgStrokedPath = CGPathCreateCopyByStrokingPath(path?.cgPath,CGAffineTransform.init(),brush,CGLineCap.round,CGLineJoin.round,0)
-//        CGPathRef cgStrokedPath = CGPathCreateCopyByStrokingPath(path.CGPath, NULL,
-//                                                                 lineWidth, kCGLineCapRound, kCGLineJoinRound, 0)
-        let a = cgStrokedPath?.getPathElementsPoints()
-        if (a?.count)! > 0 {
-            var leftTopPoint = a?[0]
-            var leftBottomPoint = a?[0]
-            var rightTopPoint = a?[0]
-            var rightBottomPoint = a?[0]
-            for point1234 in (cgStrokedPath?.getPathElementsPoints())! {
-//                leftTopPoint = point1234;
-                if Float(point1234.x)<=Float((leftTopPoint?.x)!) && Float(point1234.y)<=Float((leftTopPoint?.y)!) {
-                    leftTopPoint = point1234
-                }
-                if Float(point1234.x)<=Float((leftBottomPoint?.x)!) && Float(point1234.y)>=Float((leftBottomPoint?.y)!) {
-                    leftBottomPoint = point1234
-                }
-                if Float(point1234.x)>=Float((rightTopPoint?.x)!) && Float(point1234.y)<=Float((rightTopPoint?.y)!) {
-                    rightTopPoint = point1234
-                }
-                if Float(point1234.x)>=Float((rightBottomPoint?.x)!) && Float(point1234.y)>=Float((rightBottomPoint?.y)!) {
-                    rightBottomPoint = point1234
-                }
-//                left
-            }
-            
-//            self.createCircle(centerPoint: leftTopPoint!)
-//            self.createCircle(centerPoint: leftBottomPoint!)
-//            self.createCircle(centerPoint: rightTopPoint!)
-//            self.createCircle(centerPoint: rightBottomPoint!)
-            
-            
-//            CAShapeLayer *circleLayer = [CAShapeLayer layer];
-//            [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 50, 100, 100)] CGPath]];
-        }
-       
-        
-
-//        var smallestYpoint : CGPoint?
-//        var secSmallestYpoint : CGPoint?
-//        var largestYpoint : CGPoint?
-//        var secLargestYpoint : CGPoint?
-        
-        
-//        var <#name#> = <#value#>
-        
-        
        
         let strokedPath =  UIBezierPath(cgPath: cgStrokedPath!)
-//        path = strokedPath
-//        strokedPath.addClip()
         let layer = CAShapeLayer.init()
-//        let actualPathRect = path?.cgPath.boundingBox
-//        let transform1 = CGAffineTransform.init(translationX: 90, y: -520)
-//        path?.apply(transform1)
-//        let transform =  CGAffineTransform.init(scaleX: 1.0, y: -1.0)
-//        
-//        
-//        path?.apply(transform)
         layer.path = strokedPath.cgPath
         layer.strokeColor = UIColor.yellow.cgColor
         layer.fillColor = UIColor.brown.cgColor
@@ -150,16 +82,12 @@ class ViewController: UIViewController {
         var i = initialI// as Float
         let layerBox222 = CALayer()
         layerBox222.frame = actualPathRect!
-//        layerBox222.backgroundColor = UIColor.gray.cgColor
         self.view.layer.addSublayer(layerBox222)
-//        var i = 0 as Float
-//        smallSquareWidth = smallSquareWidth + i
         smallSquaresThatContainLetter = Array()
         repeat
         {
             let initialJ = Float((actualPathRect?.origin.y)!)
             var j = initialJ//0 as Float
-//            var j = 0 as Float
             
             repeat
             {
@@ -169,13 +97,8 @@ class ViewController: UIViewController {
                 {
                     smallSquaresThatContainLetter?.append(bPath)
                     let smallSquareLayer = CAShapeLayer()
-                    //                smallSquareLayer.frame =
                     smallSquareLayer.path = bPath.cgPath
-                    //                smallSquareLayer.mask = layer
-                    //                smallSquareLayer.borderColor = UIColor.yellow.cgColor
                     smallSquareLayer.strokeColor = UIColor.yellow.cgColor
-                    //                smallSquareLayer.backgroundColor = UIColor.yellow.cgColor
-//                    self.view.layer.addSublayer(smallSquareLayer)
                 }
                 
                 j = j + smallSquareHeight
@@ -185,42 +108,10 @@ class ViewController: UIViewController {
 
         } while (i < (Float((actualPathRect?.size.width)!) + initialI))
 
-        
-//        var midX = ((actualPathRect?.size.width)!/2) + (actualPathRect?.origin.x)!
-//        var midY = ((actualPathRect?.size.height)!/2) + (actualPathRect?.origin.y)!
-//        let c = CGPoint(x: midX, y: midY)
-//        self.createCircle(centerPoint: c)
-//        print("strokedppp\(strokedPath)")
-//        UIBezierPath *strokedPath = [UIBezierPath bezierPathWithCGPath:cgStrokedPath];
-//        printg
 
         mouseSwiped = false
     }
     
-    func createCircle(centerPoint:CGPoint) -> CGPath {
-        let circleLayer = CAShapeLayer()
-        let size = 100 as Float
-        let rad = size/2 as Float
-        //            CGRect(x: CGFloat, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-        let rect = CGRect(x:CGFloat(Float(centerPoint.x) - rad), y:CGFloat(Float(centerPoint.y) - rad), width:CGFloat(size), height:CGFloat(size))
-        let circlePath = UIBezierPath(ovalIn:rect).cgPath
-        circleLayer.path = circlePath
-        view.layer.addSublayer(circleLayer)
-        return circlePath
-    }
-    
-    func checkLinIntersection(p1: CGPoint, p2:CGPoint, p3:CGPoint, p4:CGPoint) -> Bool
-    {
-        var denominator = (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y)
-        var ua = (p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)
-        var ub = (p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)
-        if (denominator < 0) {
-            ua = -ua
-            ub = -ub
-            denominator = -denominator
-        }
-        return (ua > 0.0 && ua <= denominator && ub > 0.0 && ub <= denominator)
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -288,25 +179,25 @@ class ViewController: UIViewController {
             let newLocation = touch?.location(in: self.view)
             let prevLocation = touch?.previousLocation(in: self.view)
             var copyIntersectPoint :CGPoint?
-            var copyIntersectPoint2 :CGPoint?
+//            var copyIntersectPoint2 :CGPoint?
             let padding = 2 as Float
             if Float((newLocation?.x)!) > Float((prevLocation?.x)!) {
                 /**finger touch went right*/
                 copyIntersectPoint = CGPoint(x: CGFloat(Float(inersectPoint!.x) + padding), y: inersectPoint!.y)//contains aanenkil left side il ninnum keri, else - left side il ninnum puth poyi
-                copyIntersectPoint2 = CGPoint(x: CGFloat(Float(inersectPoint!.x) - padding), y: inersectPoint!.y)
+//                copyIntersectPoint2 = CGPoint(x: CGFloat(Float(inersectPoint!.x) - padding), y: inersectPoint!.y)
             }else {
                 /**finger touch went left*/
                 copyIntersectPoint = CGPoint(x: CGFloat(Float(inersectPoint!.x) - padding), y: inersectPoint!.y)//contains aanenkil right side il ninnum keri, else - right side il ninnum purath poyi
-                copyIntersectPoint2 = CGPoint(x: CGFloat(Float(inersectPoint!.x) + padding), y: inersectPoint!.y)
+//                copyIntersectPoint2 = CGPoint(x: CGFloat(Float(inersectPoint!.x) + padding), y: inersectPoint!.y)
             }
             if Float((newLocation?.y)!) > Float((prevLocation?.y)!) {
                 /**finger touch went upwards*/
                 copyIntersectPoint = CGPoint(x: inersectPoint!.x, y: CGFloat(Float(inersectPoint!.y) - padding))
-                copyIntersectPoint2 = CGPoint(x: inersectPoint!.x, y: CGFloat(Float(inersectPoint!.y) + padding))
+//                copyIntersectPoint2 = CGPoint(x: inersectPoint!.x, y: CGFloat(Float(inersectPoint!.y) + padding))
             } else {
                 /**finger touch went downwards*/
                 copyIntersectPoint = CGPoint(x: inersectPoint!.x, y: CGFloat(Float(inersectPoint!.y) + padding))
-                copyIntersectPoint2 = CGPoint(x: inersectPoint!.x, y: CGFloat(Float(inersectPoint!.y) - padding))
+//                copyIntersectPoint2 = CGPoint(x: inersectPoint!.x, y: CGFloat(Float(inersectPoint!.y) - padding))
             }
             
             
@@ -341,29 +232,11 @@ class ViewController: UIViewController {
                             self.isSucceed = false
                         }
         }
-//        context?.addLine(to: currentPoint!)
-////        path.
-//        if (path?.contains(currentPoint!))! {
-//            context?.setStrokeColor(UIColor.red.cgColor)
-//
-//        }
-//        else
-//        {
-//            context?.setStrokeColor(UIColor.green.cgColor)
-//            isSucceed = false
-//        }
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(CGFloat(self.brush))
         context?.setBlendMode(CGBlendMode.normal)
-            self.drawingPaths?.append((context?.path)!)
-//            print("\(context?.path)")
+        self.drawingPaths?.append((context?.path)!)
         context?.strokePath()
-            
-//        if ((context?.path) != nil) {
-            
-
-//        }
-//        context.cop
         self.tempDrawImage.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.lastPoint = currentPoint
@@ -375,9 +248,6 @@ class ViewController: UIViewController {
         print("touchesEnded")
         let  touch = touches.first
         let currentPoint = touch?.location(in: self.view)
-        
-//        let finalContext = UIGraphicsGetCurrentContext()
-//        print("fffff\(finalContext)")
         if mouseSwiped == false {
             
             UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
@@ -423,7 +293,6 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         DispatchQueue.main.async {
-//            print("\(self.drawingPaths)")
             let smallSquaresThatContainDrawsSet = NSMutableSet()
             for bPath in self.smallSquaresThatContainLetter!
             {
@@ -445,8 +314,6 @@ class ViewController: UIViewController {
             {
                 self.isSucceed = false
             }
-//            LineManager
-//            self.drawingPaths
             self.labelResult.isHidden = false
             self.buttonTryAgain.isHidden = false
             if (self.isSucceed == true)
@@ -482,7 +349,6 @@ extension CGPath {
             let body = unsafeBitCast(info, to: Body.self)
             body(element.pointee)
         }
-//        print(MemoryLayout.size(ofValue: body))
         let unsafeBody = unsafeBitCast(body, to: UnsafeMutableRawPointer.self)
         self.apply(info: unsafeBody, function: unsafeBitCast(callback, to: CGPathApplierFunction.self))
     }
@@ -537,5 +403,5 @@ extension CGPath {
         }
         return (arrayPoints,arrayTypes)
     }
-}//}
+}
 
