@@ -16,84 +16,96 @@ import CoreText
 class ViewController: UIViewController {
     
     
-    var mouseSwiped : Bool?
+    var isMouseSwiped : Bool?
     var lastPoint : CGPoint?
     let brush = 3.0
-    var path: UIBezierPath?
+    var letterBezierPath: UIBezierPath?
     var isSucceed : Bool?
     var drawingPaths : [CGPath]?
-    var cgStrokedPath : CGPath?
-    var prevIntersect : CGPoint?
+    var letterStrokedPoints : [CGPoint]?
     var smallSquaresThatContainLetter: [UIBezierPath]?
+    var labelResult : UILabel?
+    var buttonTryAgain : UIButton?
+    var mainImage : UIImageView?
+    var tempDrawImage : UIImageView?
     
-    @IBOutlet weak var labelResult: UILabel!
-   
-    @IBOutlet weak var buttonTryAgain: UIButton!
-    @IBOutlet weak var mainImage: UIImageView!
-    @IBOutlet weak var tempDrawImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        labelResult.textColor = UIColor.white
-        self.buttonTryAgain.isExclusiveTouch = true
-        self.clear()
-        let font = UIFont(name: "HelveticaNeue", size: 350)!
         
-        var unichars = [UniChar]("D".utf16)
-        var glyphs = [CGGlyph](repeating: 0, count: unichars.count)
-        let gotGlyphs = CTFontGetGlyphsForCharacters(font, &unichars, &glyphs, unichars.count)
-        if gotGlyphs {
-            let cgpath = CTFontCreatePathForGlyph(font, glyphs[0], nil)!
-            path = UIBezierPath.init(cgPath: cgpath)
-            let layer = CAShapeLayer.init()
+        
+        mainImage = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
+        self.view.addSubview(mainImage!)
+        
+        tempDrawImage = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
+        self.view.addSubview(tempDrawImage!)
+        
+        labelResult = UILabel(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 150, width: UIScreen.main.bounds.size.width, height: 30))
+        labelResult!.textAlignment = NSTextAlignment.center
+        labelResult!.textColor = UIColor.black
+        self.view.addSubview(labelResult!)
+        
+        buttonTryAgain = UIButton(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 100, width: UIScreen.main.bounds.size.width, height: 30))
+        buttonTryAgain?.setTitleColor(self.view.tintColor, for: UIControlState.normal)
+        buttonTryAgain!.setTitle("Try Again", for: UIControlState.normal)
+        buttonTryAgain!.isExclusiveTouch = true
+        buttonTryAgain?.addTarget(self, action: #selector(buttonAction(_:)), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(buttonTryAgain!)
+        
+        
+        self.clear()
+
+        letterBezierPath = self.getPathForLetter(letter: "a")
+        if letterBezierPath != nil {
+            let LetterShapelayer = CAShapeLayer.init()
             
             
-            let transform1 = CGAffineTransform.init(translationX: 50, y: -520)
-            path?.apply(transform1)
-            let transform =  CGAffineTransform.init(scaleX: 1.0, y: -1.0)
+            let transformTranslation = CGAffineTransform.init(translationX: 50, y: -320)
+            letterBezierPath?.apply(transformTranslation)
+            let transformScale =  CGAffineTransform.init(scaleX: 1.0, y: -1.0)
             
             
-            path?.apply(transform)
-            layer.path = path?.cgPath
-            layer.strokeColor = UIColor.yellow.cgColor
-            layer.fillColor = UIColor.brown.cgColor
-            self.mainImage.layer.addSublayer(layer)
+            letterBezierPath?.apply(transformScale)
+            LetterShapelayer.path = letterBezierPath?.cgPath
+            LetterShapelayer.strokeColor = UIColor.yellow.cgColor
+            LetterShapelayer.fillColor = UIColor.brown.cgColor
+            self.mainImage!.layer.addSublayer(LetterShapelayer)
             
         }
-        cgStrokedPath =  path?.cgPath.copy(strokingWithWidth: CGFloat(brush), lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0)
+        let letterStrokedPath =  letterBezierPath?.cgPath.copy(strokingWithWidth: CGFloat(brush), lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0)
+        
+        letterStrokedPoints = letterStrokedPath?.getPathElementsPoints()
        
-        let strokedPath =  UIBezierPath(cgPath: cgStrokedPath!)
-        let layer = CAShapeLayer.init()
-        layer.path = strokedPath.cgPath
-        layer.strokeColor = UIColor.yellow.cgColor
-        layer.fillColor = UIColor.brown.cgColor
-        self.view.layer.addSublayer(layer)
+        let letterStrokedBezierPath =  UIBezierPath(cgPath: letterStrokedPath!)
+        let letterStrokedLayer = CAShapeLayer.init()
+        letterStrokedLayer.path = letterStrokedBezierPath.cgPath
+        letterStrokedLayer.strokeColor = UIColor.yellow.cgColor
+        letterStrokedLayer.fillColor = UIColor.brown.cgColor
+        self.view.layer.addSublayer(letterStrokedLayer)
         
         
-        let actualPathRect = path?.cgPath.boundingBox
-        let some = UIBezierPath.init(rect: actualPathRect!)
-        let layerbox = CAShapeLayer()
-        layerbox.path = some.cgPath
-        self.mainImage.layer.addSublayer(layerbox)
+        let letterEncloseRectPath = letterBezierPath?.cgPath.boundingBox
+        let letterEncloseRectBezierPath = UIBezierPath.init(rect: letterEncloseRectPath!)
+        let letterEncloseRectLayer = CAShapeLayer()
+        letterEncloseRectLayer.path = letterEncloseRectBezierPath.cgPath
+//        self.mainImage.layer.addSublayer(letterEncloseRectLayer)
         
-        let smallSquareWidth = Float((actualPathRect?.size.width)!/4)
-        let smallSquareHeight = Float((actualPathRect?.size.height)!/4)
-        let initialI = Float((actualPathRect?.origin.x)!)
-        var i = initialI// as Float
-        let layerBox222 = CALayer()
-        layerBox222.frame = actualPathRect!
-        self.view.layer.addSublayer(layerBox222)
+        let smallSlicingSquareWidth = Float((letterEncloseRectPath?.size.width)!/4)
+        let smallSlicingSquareHeight = Float((letterEncloseRectPath?.size.height)!/4)
+        let initialI = Float((letterEncloseRectPath?.origin.x)!)
+        var i = initialI
+        
         smallSquaresThatContainLetter = Array()
         repeat
         {
-            let initialJ = Float((actualPathRect?.origin.y)!)
-            var j = initialJ//0 as Float
+            let initialJ = Float((letterEncloseRectPath?.origin.y)!)
+            var j = initialJ
             
             repeat
             {
                 
-                let bPath = UIBezierPath.init(rect: CGRect(x: CGFloat(i), y: CGFloat(j), width: CGFloat(smallSquareWidth), height: CGFloat(smallSquareHeight)))
-                if(LineManager.isIntersectedPath(path, path2: bPath) == true)
+                let bPath = UIBezierPath.init(rect: CGRect(x: CGFloat(i), y: CGFloat(j), width: CGFloat(smallSlicingSquareWidth), height: CGFloat(smallSlicingSquareHeight)))
+                if(LineManager.isIntersectedPath(letterBezierPath, path2: bPath) == true)
                 {
                     smallSquaresThatContainLetter?.append(bPath)
                     let smallSquareLayer = CAShapeLayer()
@@ -101,15 +113,15 @@ class ViewController: UIViewController {
                     smallSquareLayer.strokeColor = UIColor.yellow.cgColor
                 }
                 
-                j = j + smallSquareHeight
+                j = j + smallSlicingSquareHeight
             }
-            while ( j < (Float((actualPathRect?.size.width)!) + initialJ))
-            i = i + smallSquareWidth
+            while ( j < (Float((letterEncloseRectPath?.size.width)!) + initialJ))
+            i = i + smallSlicingSquareWidth
 
-        } while (i < (Float((actualPathRect?.size.width)!) + initialI))
+        } while (i < (Float((letterEncloseRectPath?.size.width)!) + initialI))
 
 
-        mouseSwiped = false
+        isMouseSwiped = false
     }
     
     
@@ -121,7 +133,7 @@ class ViewController: UIViewController {
     
     func getPathForLetter(letter: Character) -> UIBezierPath {
         var path = UIBezierPath()
-        let font = CTFontCreateWithName("HelveticaNeue" as CFString, 64, nil)
+        let font = CTFontCreateWithName("HelveticaNeue" as CFString, 350, nil)
         var unichars = [UniChar]("\(letter)".utf16)
         var glyphs = [CGGlyph](repeating: 0, count: unichars.count)
         
@@ -130,7 +142,6 @@ class ViewController: UIViewController {
             let cgpath = CTFontCreatePathForGlyph(font, glyphs[0], nil)
             path = UIBezierPath.init(cgPath: cgpath!)
         }
-        print("pppp\(path)")
         return path
     }
 
@@ -140,7 +151,7 @@ class ViewController: UIViewController {
         self.clear()
         drawingPaths = Array.init()
         isSucceed = true;
-        mouseSwiped = false
+        isMouseSwiped = false
         let  touch = touches.first
         lastPoint = touch?.location(in: self.view)
         print("touchesBegan")
@@ -148,14 +159,14 @@ class ViewController: UIViewController {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         DispatchQueue.main.async {
-        self.mouseSwiped = true
-        let  touch = touches.first
+        self.isMouseSwiped = true
+        let touch = touches.first
         let currentPoint = touch?.location(in: self.view)
         print("touchesMoved")
         
-            UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0)
         
-        self.tempDrawImage.image?.draw(in: self.view.bounds)
+        self.tempDrawImage!.image?.draw(in: self.view.bounds)
         
         let context = UIGraphicsGetCurrentContext()
         
@@ -164,13 +175,13 @@ class ViewController: UIViewController {
         
         var inersectPoint : CGPoint?
         
-        var p234:CGPoint?
-        for points123 in (self.cgStrokedPath?.getPathElementsPoints())! {
+        var copyTempPoint:CGPoint?
+        for point in (self.letterStrokedPoints)! {
             
-            if p234 != nil {
-                inersectPoint = LineManager.lineIntersection(self.lastPoint!, p2: currentPoint!, p3: points123, p4: p234!)
+            if copyTempPoint != nil {
+                inersectPoint = LineManager.lineIntersection(self.lastPoint!, p2: currentPoint!, p3: point, p4: copyTempPoint!)
             }
-            p234 = points123
+            copyTempPoint = point
         }
         
         if inersectPoint?.equalTo(CGPoint.zero) == false  {
@@ -203,7 +214,7 @@ class ViewController: UIViewController {
             
             
             
-            if (self.path?.contains(copyIntersectPoint!))! {
+            if (self.letterBezierPath?.contains(copyIntersectPoint!))! {
                 //akath keri
                 context?.addLine(to: inersectPoint!)
                 context?.setStrokeColor(UIColor.green.cgColor)
@@ -217,27 +228,26 @@ class ViewController: UIViewController {
                 context?.addLine(to: currentPoint!)
                 context?.setStrokeColor(UIColor.green.cgColor)
             }
-            self.prevIntersect = inersectPoint
         }
         else
         {
-        context?.addLine(to: currentPoint!)
-            if (self.path?.contains(currentPoint!))! {
-                            context?.setStrokeColor(UIColor.red.cgColor)
-                
-                        }
-                        else
-                        {
-                            context?.setStrokeColor(UIColor.green.cgColor)
-                            self.isSucceed = false
-                        }
+            context?.addLine(to: currentPoint!)
+            if (self.letterBezierPath?.contains(currentPoint!))!
+            {
+                context?.setStrokeColor(UIColor.red.cgColor)
+            }
+            else
+            {
+                context?.setStrokeColor(UIColor.green.cgColor)
+                self.isSucceed = false
+            }
         }
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(CGFloat(self.brush))
         context?.setBlendMode(CGBlendMode.normal)
         self.drawingPaths?.append((context?.path)!)
         context?.strokePath()
-        self.tempDrawImage.image = UIGraphicsGetImageFromCurrentImageContext()
+        self.tempDrawImage!.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.lastPoint = currentPoint
         }
@@ -248,11 +258,11 @@ class ViewController: UIViewController {
         print("touchesEnded")
         let  touch = touches.first
         let currentPoint = touch?.location(in: self.view)
-        if mouseSwiped == false {
+        if isMouseSwiped == false {
             
             UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
             
-            self.tempDrawImage.image?.draw(in: view.bounds)
+            self.tempDrawImage!.image?.draw(in: view.bounds)
             
             let context = UIGraphicsGetCurrentContext()
             
@@ -261,7 +271,7 @@ class ViewController: UIViewController {
             
             context?.setLineCap(CGLineCap.round)
             context?.setLineWidth(CGFloat(brush))
-            if (path?.contains(currentPoint!))! {
+            if (letterBezierPath?.contains(currentPoint!))! {
                 context?.setStrokeColor(UIColor.red.cgColor)
                 
             }
@@ -277,35 +287,35 @@ class ViewController: UIViewController {
             }
             context?.strokePath()
             
-            self.tempDrawImage.image = UIGraphicsGetImageFromCurrentImageContext()
+            self.tempDrawImage!.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
 
             
         }
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
-        self.mainImage.image?.draw(in: view.bounds)
+        self.mainImage!.image?.draw(in: view.bounds)
 
-        self.tempDrawImage.image?.draw(in: view.bounds)
+        self.tempDrawImage!.image?.draw(in: view.bounds)
         
         
-        self.mainImage.image = UIGraphicsGetImageFromCurrentImageContext()
-        self.mainImage.image = nil
+        self.mainImage!.image = UIGraphicsGetImageFromCurrentImageContext()
+        self.mainImage!.image = nil
         UIGraphicsEndImageContext()
         
         DispatchQueue.main.async {
             let smallSquaresThatContainDrawsSet = NSMutableSet()
-            for bPath in self.smallSquaresThatContainLetter!
+            for ltrPath in self.smallSquaresThatContainLetter!
             {
-                for dPath in self.drawingPaths!
+                for drwPath in self.drawingPaths!
                 {
-                    let bezierDrawPath = UIBezierPath.init(cgPath: dPath)
-                    if(LineManager.isIntersectedPath(bPath, path2: bezierDrawPath) == true)
+                    let bezierDrawPath = UIBezierPath.init(cgPath: drwPath)
+                    if(LineManager.isIntersectedPath(ltrPath, path2: bezierDrawPath) == true)
                     {
-                        smallSquaresThatContainDrawsSet.add(bPath)
+                        smallSquaresThatContainDrawsSet.add(ltrPath)
                     }
                 }
             }
-            let avg = ((self.smallSquaresThatContainLetter?.count)! * 93) / 100
+            let avg = ((self.smallSquaresThatContainLetter?.count)! * 86) / 100
             if self.smallSquaresThatContainLetter?.count == smallSquaresThatContainDrawsSet.count || smallSquaresThatContainDrawsSet.count >= avg
             {
                 
@@ -314,30 +324,30 @@ class ViewController: UIViewController {
             {
                 self.isSucceed = false
             }
-            self.labelResult.isHidden = false
-            self.buttonTryAgain.isHidden = false
+            self.labelResult!.isHidden = false
+            self.buttonTryAgain!.isHidden = false
             if (self.isSucceed == true)
             {
-                self.labelResult.text = "Success";
+                self.labelResult!.text = "Success";
             }
             else
             {
-                self.labelResult.text = "Failed";
+                self.labelResult!.text = "Failed";
             }
         }
     }
     
-    
-
-    @IBAction func buttonAction(_ sender: Any) {
+    func buttonAction(_ sender: Any) {
         self.clear()
     }
+
+
     
     func clear() {
-        self.mainImage.image = nil
-        self.tempDrawImage.image = nil
-        self.buttonTryAgain.isHidden = true
-        self.labelResult.isHidden = true
+        self.mainImage!.image = nil
+        self.tempDrawImage!.image = nil
+        self.buttonTryAgain!.isHidden = true
+        self.labelResult!.isHidden = true
     }
     
 }
