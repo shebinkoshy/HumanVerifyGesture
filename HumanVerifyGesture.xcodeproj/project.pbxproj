@@ -42,6 +42,7 @@
 		98A8E0651F1262890046538E /* UIBezierPath+Trim.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A8E0491F1262890046538E /* UIBezierPath+Trim.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98A8E0661F1262890046538E /* UIBezierPath+Uncached.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A8E04B1F1262890046538E /* UIBezierPath+Uncached.m */; };
 		98A8E0671F1262890046538E /* UIBezierPath+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A8E04D1F1262890046538E /* UIBezierPath+Util.m */; };
+		98B2508D1F12986E001DB54B /* HVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B2508C1F12986E001DB54B /* HVG.swift */; };
 		98B55D721F1106EB00CE8E77 /* AGKLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B55D711F1106EB00CE8E77 /* AGKLine.m */; };
 		98B55D761F11083400CE8E77 /* CGGeometry+AGGeometryKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B55D751F11083400CE8E77 /* CGGeometry+AGGeometryKit.m */; };
 		98B55D791F110EFC00CE8E77 /* LineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B55D781F110EFC00CE8E77 /* LineManager.m */; };
@@ -154,6 +155,7 @@
 		98A8E04B1F1262890046538E /* UIBezierPath+Uncached.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+Uncached.m"; path = "../UIBezierPath+Uncached.m"; sourceTree = "<group>"; };
 		98A8E04C1F1262890046538E /* UIBezierPath+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+Util.h"; path = "../UIBezierPath+Util.h"; sourceTree = "<group>"; };
 		98A8E04D1F1262890046538E /* UIBezierPath+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+Util.m"; path = "../UIBezierPath+Util.m"; sourceTree = "<group>"; };
+		98B2508C1F12986E001DB54B /* HVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HVG.swift; sourceTree = "<group>"; };
 		98B55D6F1F1106EA00CE8E77 /* HumanVerifyGesture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HumanVerifyGesture-Bridging-Header.h"; sourceTree = "<group>"; };
 		98B55D701F1106EB00CE8E77 /* AGKLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKLine.h; sourceTree = "<group>"; };
 		98B55D711F1106EB00CE8E77 /* AGKLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGKLine.m; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				98A8DFD41F1261DF0046538E /* ThirdParty */,
 				98FA74AA1F093D390076B51F /* AppDelegate.swift */,
 				98FA74AC1F093D390076B51F /* ViewController.swift */,
+				98B2508C1F12986E001DB54B /* HVG.swift */,
 				98FA74AE1F093D390076B51F /* Main.storyboard */,
 				98B55D7A1F111FEF00CE8E77 /* MyViewController.h */,
 				98B55D7B1F111FEF00CE8E77 /* MyViewController.m */,
@@ -530,6 +533,7 @@
 				98A8E05A1F1262890046538E /* DKUIBezierPathShape.m in Sources */,
 				98A8E0041F1262380046538E /* matrix.cpp in Sources */,
 				98A8E05B1F1262890046538E /* DKTangentAtPoint.m in Sources */,
+				98B2508D1F12986E001DB54B /* HVG.swift in Sources */,
 				98A8E0601F1262890046538E /* UIBezierPath+Clockwise.m in Sources */,
 				98A8E00E1F12624D0046538E /* convexhull.cxx in Sources */,
 				98A8E0531F1262890046538E /* UIBezierPath+DKOSX.m in Sources */,
