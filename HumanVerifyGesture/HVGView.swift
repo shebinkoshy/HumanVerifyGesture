@@ -9,11 +9,12 @@
 import UIKit
 
 protocol HVGViewDelegate{
-    func HVGResult(view:HVG, isSuccess: Bool!)
-    func HVGCleared(view:HVG)
+    func HVGResult(view:HVGView, isSuccess: Bool!)
+    func HVGCleared(view:HVGView)
+//    func HVGTouchesBegan(view:HVGView, point: CGPoint!)
 }
 
-class HVG: UIView {
+class HVGView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -40,17 +41,12 @@ class HVG: UIView {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-//        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         
         mainImage = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
         self.addSubview(mainImage!)
         
         tempDrawImage = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
         self.addSubview(tempDrawImage!)
-        
-        
         
         
         self.clear()
@@ -147,12 +143,14 @@ class HVG: UIView {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let  touch = touches.first
+        lastPoint = touch?.location(in: self)
+//        delegate?.HVGTouchesBegan(view: self, point: lastPoint)
         self.clear()
         drawingPaths = Array.init()
         isSucceed = true;
         isMouseSwiped = false
-        let  touch = touches.first
-        lastPoint = touch?.location(in: self)
+        
         print("touchesBegan")
     }
     
@@ -325,22 +323,8 @@ class HVG: UIView {
                 self.isSucceed = false
             }
             self.delegate?.HVGResult(view: self, isSuccess: self.isSucceed)
-//            self.labelResult!.isHidden = false
-//            self.buttonTryAgain!.isHidden = false
-//            if (self.isSucceed == true)
-//            {
-//                self.labelResult!.text = "Success";
-//            }
-//            else
-//            {
-//                self.labelResult!.text = "Failed";
-//            }
         }
     }
-    
-//    func buttonAction(_ sender: Any) {
-//        self.clear()
-//    }
     
     
     
@@ -348,8 +332,6 @@ class HVG: UIView {
         self.mainImage!.image = nil
         self.tempDrawImage!.image = nil
         self.delegate?.HVGCleared(view: self)
-//        self.buttonTryAgain!.isHidden = true
-//        self.labelResult!.isHidden = true
     }
     
 }

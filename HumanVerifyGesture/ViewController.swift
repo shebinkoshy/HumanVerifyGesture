@@ -7,24 +7,15 @@
 //
 
 import UIKit
-//import CoreGraphics
 
-//import UIKit
-//import CoreText
-
-
-class ViewController: UIViewController,HVGViewDelegate {
+class ViewController: UIViewController,HVGViewDelegate,UIGestureRecognizerDelegate {
     
     var labelResult : UILabel?
     var buttonTryAgain : UIButton?
-    var viewHVG : HVG?
+    var viewHVG : HVGView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewHVG = HVG(frame: self.view.frame)
-        viewHVG?.delegate = self
-        self.view.addSubview(viewHVG!)
         
         labelResult = UILabel(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 150, width: UIScreen.main.bounds.size.width, height: 30))
         labelResult!.textAlignment = NSTextAlignment.center
@@ -36,7 +27,17 @@ class ViewController: UIViewController,HVGViewDelegate {
         buttonTryAgain!.setTitle("Try Again", for: UIControlState.normal)
         buttonTryAgain!.isExclusiveTouch = true
         buttonTryAgain?.addTarget(self, action: #selector(buttonAction(_:)), for: UIControlEvents.touchUpInside)
+//        self.view.gestureR
         self.view.addSubview(buttonTryAgain!)
+        
+        
+        
+        viewHVG = HVGView(frame: self.view.frame)
+        self.HVGCleared(view: viewHVG!)
+        viewHVG?.delegate = self
+        self.view.addSubview(viewHVG!)
+        
+        
         
     }
     
@@ -45,7 +46,7 @@ class ViewController: UIViewController,HVGViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func HVGResult(view:HVG, isSuccess: Bool!) {
+    func HVGResult(view:HVGView, isSuccess: Bool!) {
         self.labelResult!.isHidden = false
         self.buttonTryAgain!.isHidden = false
         if (isSuccess == true)
@@ -59,13 +60,31 @@ class ViewController: UIViewController,HVGViewDelegate {
 
     }
     
-    func HVGCleared(view:HVG) {
+    func HVGCleared(view:HVGView) {
         self.buttonTryAgain!.isHidden = true
         self.labelResult!.isHidden = true
     }
     
     func buttonAction(_ sender: Any) {
         viewHVG?.clear()
+    }
+    
+     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    {
+        if (gestureRecognizer.view?.isEqual(buttonTryAgain))!
+        {
+            return true
+        }
+        return false
+    }
+    
+     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool
+     {
+        if (gestureRecognizer.view?.isEqual(buttonTryAgain))!
+        {
+            return true
+        }
+        return false
     }
     
 }
