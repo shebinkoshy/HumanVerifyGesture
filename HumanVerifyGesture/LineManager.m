@@ -10,6 +10,8 @@
 
 #import "AGKLine.h"
 
+#import "ClippingBezier.h"
+
 @implementation LineManager
 
 +(CGPoint)LineIntersection:(CGPoint)p1 p2:(CGPoint)p2 p3:(CGPoint)pa p4:(CGPoint)pb
@@ -25,6 +27,17 @@
     
     
     return p;
+}
+
+
++(BOOL)isIntersectedPath:(UIBezierPath*)path1 path2:(UIBezierPath*)path2
+{
+    NSArray *array = [path1 findIntersectionsWithClosedPath:path2 andBeginsInside:nil];
+    if (array && array.count > 0)
+    {
+        return YES;
+    }
+    return NO;
 }
 
 @end
