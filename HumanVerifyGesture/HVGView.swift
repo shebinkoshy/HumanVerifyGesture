@@ -313,7 +313,7 @@ class HVGView: UIView {
                     }
                 }
             }
-            let avg = ((self.smallSquaresThatContainLetter?.count)! * 86) / 100
+            let avg = ((self.smallSquaresThatContainLetter?.count)! * 80) / 100
             if self.smallSquaresThatContainLetter?.count == smallSquaresThatContainDrawsSet.count || smallSquaresThatContainDrawsSet.count >= avg
             {
                 
