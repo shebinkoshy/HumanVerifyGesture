@@ -55,7 +55,7 @@
     return theta;
 }
 
--(DKVector*) normal{
+-(DKVector*) normalVector{
     // just divide our x and y by our length
     CGFloat length = sqrt(x * x + y * y);
     return [DKVector vectorWithX:(x / length) andY:(y / length)];
@@ -90,10 +90,10 @@
     return [DKVector vectorWithX:xprime andY:yprime];
 }
 
--(DKVector*) mirrorAround:(DKVector*)normal{
-    CGFloat dotprod =-x*normal.x-y*normal.y;
-    CGFloat xprime =x+2*normal.x*dotprod;
-    CGFloat yprime =y+2*normal.y*dotprod;
+-(DKVector*) mirrorAround:(DKVector*)normalVector{
+    CGFloat dotprod =-x*normalVector.x-y*normalVector.y;
+    CGFloat xprime =x+2*normalVector.x*dotprod;
+    CGFloat yprime =y+2*normalVector.y*dotprod;
 	return [DKVector vectorWithX:xprime andY:yprime];
 }
 

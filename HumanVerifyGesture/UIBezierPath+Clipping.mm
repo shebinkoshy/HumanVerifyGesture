@@ -1957,8 +1957,7 @@ static NSInteger segmentCompareCount = 0;
             
             CGPoint tangent = [UIBezierPath tangentAtT:tValueToUse forBezier:bez];
             CGPoint point = [UIBezierPath pointAtT:tValueToUse forBezier:bez];
-            
-            ret = [DKTangentAtPoint tangent:[[DKVector vectorWithX:tangent.x andY:tangent.y] normal]  atPoint:point];
+            ret = [DKTangentAtPoint tangent:[[DKVector vectorWithX:tangent.x andY:tangent.y] normalVector]  atPoint:point];
         }
         lengthSoFar += lengthOfElement;
         lastPoint = nextLastPoint;

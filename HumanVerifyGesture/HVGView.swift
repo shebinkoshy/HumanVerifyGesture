@@ -38,7 +38,7 @@ class HVGView: UIView {
     var mainImage : UIImageView?
     var tempDrawImage : UIImageView?
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, letter: Character) {
         
         super.init(frame: frame)
         
@@ -51,7 +51,7 @@ class HVGView: UIView {
         
         self.clear()
         
-        letterBezierPath = self.getPathForLetter(letter: "a")
+        letterBezierPath = self.getPathForLetter(letter: letter)
         if letterBezierPath != nil {
             let LetterShapelayer = CAShapeLayer.init()
             
@@ -337,7 +337,7 @@ class HVGView: UIView {
 }
 extension CGPath {
     
-    func forEach( body: @convention(block) (CGPathElement) -> Void) {
+    func forEach( body: @escaping @convention(block) (CGPathElement) -> Void) {
         typealias Body = @convention(block) (CGPathElement) -> Void
         let callback: @convention(c) (UnsafeMutableRawPointer, UnsafePointer<CGPathElement>) -> Void = { (info, element) in
             let body = unsafeBitCast(info, to: Body.self)

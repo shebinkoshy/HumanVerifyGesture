@@ -23,16 +23,16 @@ class ViewController: UIViewController,HVGViewDelegate,UIGestureRecognizerDelega
         self.view.addSubview(labelResult!)
         
         buttonTryAgain = UIButton(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 100, width: UIScreen.main.bounds.size.width, height: 30))
-        buttonTryAgain?.setTitleColor(self.view.tintColor, for: UIControlState.normal)
-        buttonTryAgain!.setTitle("Try Again", for: UIControlState.normal)
+        buttonTryAgain?.setTitleColor(self.view.tintColor, for: UIControl.State.normal)
+        buttonTryAgain!.setTitle("Try Again", for: UIControl.State.normal)
         buttonTryAgain!.isExclusiveTouch = true
-        buttonTryAgain?.addTarget(self, action: #selector(buttonAction(_:)), for: UIControlEvents.touchUpInside)
+        buttonTryAgain?.addTarget(self, action: #selector(buttonAction(_:)), for: UIControl.Event.touchUpInside)
 //        self.view.gestureR
         self.view.addSubview(buttonTryAgain!)
         
         
         
-        viewHVG = HVGView(frame: self.view.frame)
+        viewHVG = HVGView(frame: self.view.frame, letter: "a")
         self.HVGCleared(view: viewHVG!)
         viewHVG?.delegate = self
         self.view.addSubview(viewHVG!)
@@ -65,7 +65,7 @@ class ViewController: UIViewController,HVGViewDelegate,UIGestureRecognizerDelega
         self.labelResult!.isHidden = true
     }
     
-    func buttonAction(_ sender: Any) {
+    @objc func buttonAction(_ sender: Any) {
         viewHVG?.clear()
     }
     

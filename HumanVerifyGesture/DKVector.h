@@ -24,7 +24,7 @@
 
 -(id) initWithX:(CGFloat)x andY:(CGFloat)y;
 
--(DKVector*) normal;
+-(DKVector*) normalVector;
 
 -(DKVector*) perpendicular;
 
